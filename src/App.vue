@@ -1,9 +1,20 @@
 <template>
-  <ul></ul>
+  <list-resources
+    v-for="ressource in storedRessources"
+    :key="ressource.id"
+    :tittle="ressource.tittle"
+    :description="ressource.description"
+    :link="ressource.link"
+  ></list-resources>
 </template>
 
 <script>
+import ListResources from './components/ListRessources.vue';
+
 export default {
+  components: {
+    ListResources,
+  },
   data() {
     return {
       storedRessources: [
