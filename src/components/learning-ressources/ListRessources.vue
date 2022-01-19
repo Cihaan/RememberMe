@@ -3,12 +3,12 @@
     <base-card>
       <header>
         <h3>{{ tittle }}</h3>
-        <button>Delete</button>
+        <delete-button mode='flat'>Delete</delete-button>
       </header>
-  <p>{{ description }}</p>
-  <nav>
-    <a :href="link">View ressource</a>
-  </nav>
+      <p>{{ description }}</p>
+      <nav>
+        <a :href="link">View ressource</a>
+      </nav>
     </base-card>
   </li>
 </template>
