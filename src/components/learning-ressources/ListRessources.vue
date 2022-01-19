@@ -1,16 +1,16 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
         <h3>{{ tittle }}</h3>
         <button>Delete</button>
       </header>
-    </div>
-  </li>
   <p>{{ description }}</p>
   <nav>
     <a :href="link">View ressource</a>
   </nav>
+    </base-card>
+  </li>
 </template>
 
 <script>
