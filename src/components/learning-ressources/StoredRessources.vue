@@ -17,7 +17,7 @@ export default {
   components: {
     ListResources,
   },
-  props: ['ressources'],
+  inject: ['ressources'],
 };
 </script>
 
