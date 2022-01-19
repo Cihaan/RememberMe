@@ -10,7 +10,9 @@
       :mode="addResButtonMode"
       >Add Ressource</base-button
     >
-    <component :is="selectedTab"></component>
+    <keep-alive>
+      <component :is="selectedTab"></component>
+    </keep-alive>
   </base-card>
 </template>
 <script>
@@ -28,13 +30,13 @@ export default {
       storedRessources: [
         {
           id: 'official-guide',
-          tittle: 'Official Guide',
+          title: 'Official Guide',
           description: 'The official VueJS documentation.',
           link: 'https://vuejs.org',
         },
         {
           id: 'google',
-          tittle: 'Google',
+          title: 'Google',
           description: 'Find everything.',
           link: 'https://google.org',
         },
@@ -52,11 +54,22 @@ export default {
   provide() {
     return {
       ressources: this.storedRessources,
+      addRessource: this.addRessource,
     };
   },
   methods: {
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+    addRessource(title, desc, url) {
+      const newRessouce = {
+        id: new Date().toISOString(),
+        title: title,
+        description: desc,
+        link: url,
+      };
+      this.storedRessources.unshift(newRessouce);
+      this.selectedTab = 'stored-ressources';
     },
   },
 };

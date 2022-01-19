@@ -2,7 +2,7 @@
   <li>
     <base-card>
       <header>
-        <h3>{{ tittle }}</h3>
+        <h3>{{ title }}</h3>
         <base-button mode='flat'>Delete</base-button>
       </header>
       <p>{{ description }}</p>
@@ -17,7 +17,7 @@
 export default {
   props: {
     id: String,
-    tittle: String,
+    title: String,
     description: String,
     link: String,
   },
